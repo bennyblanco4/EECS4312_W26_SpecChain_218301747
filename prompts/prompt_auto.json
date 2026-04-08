@@ -1,3 +1,70 @@
 {
-    "prompt": ""
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "clustering_approach": "TF-IDF vectorization (max 2000 features) + K-Means (k=5, n_init=10)",
+  "prompts": [
+    {
+      "step": "group_theme_labeling",
+      "group_id": "A1",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_size": 10
+    },
+    {
+      "step": "group_theme_labeling",
+      "group_id": "A2",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_size": 10
+    },
+    {
+      "step": "group_theme_labeling",
+      "group_id": "A3",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_size": 10
+    },
+    {
+      "step": "group_theme_labeling",
+      "group_id": "A4",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_size": 10
+    },
+    {
+      "step": "group_theme_labeling",
+      "group_id": "A5",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_size": 10
+    },
+    {
+      "step": "persona_generation",
+      "group_id": "A1",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_reviews_used": 8
+    },
+    {
+      "step": "persona_generation",
+      "group_id": "A2",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_reviews_used": 8
+    },
+    {
+      "step": "persona_generation",
+      "group_id": "A3",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_reviews_used": 8
+    },
+    {
+      "step": "persona_generation",
+      "group_id": "A4",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_reviews_used": 8
+    },
+    {
+      "step": "persona_generation",
+      "group_id": "A5",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "sample_reviews_used": 8
+    }
+  ],
+  "prompt_templates": {
+    "group_theme_labeling": "You are analyzing user reviews for MindDoc... [sample reviews listed] ... provide a theme label and description in JSON",
+    "persona_generation": "You are a software requirements engineer... [group theme, description, sample reviews] ... create a user persona in JSON"
+  }
 }

@@ -1,33 +1,144 @@
-# EECS4312_W26_SpecChain
+# EECS4312_W26_SpecChain_218301747
 
-## instructions:
-Please update to include: 
-- App name
-- Data collection method
-- Original dataset
-- Final cleaned dataset
-- Exact commands to run pipeline
+**Student ID:** 218301747  
+**Course:** EECS 4312 – Software Requirements Engineering, Winter 2026
 
-# example
-Application: [Calm]
+---
 
-Dataset:
-- reviews_raw.jsonl contains the collected reviews.
-- reviews_clean.jsonl contains the cleaned dataset.
-- The cleaned dataset contains 842 reviews.
+## Application
 
-Repository Structure:
-- data/ contains datasets and review groups
-- personas/ contains persona files
-- spec/ contains specifications
-- tests/ contains validation tests
-- metrics/ contains all metric files
-- src/ contains executable Python scripts
-- reflection/ contains the final reflection
+**App:** MindDoc: Mental Health Support  
+**Google Play Package:** `de.moodpath.android`  
+**Category:** Mental health / mood tracking journaling app
 
-How to Run:
-1. python src/00_validate_repo.py
-2. python src/02_clean.py
-3. python src/run_all.py
-4. Open metrics/metrics_summary.json for comparison results
+---
 
+## Dataset
+
+| | |
+|---|---|
+| Collection method | Google Play Scraper (`google-play-scraper` Python library), newest-first sort |
+| Raw reviews collected | 5,000 (stored in `data/reviews_raw.jsonl`) |
+| Reviews after cleaning | **4,278** (stored in `data/reviews_clean.jsonl`) |
+| Cleaning steps | Deduplication, removal of empty/very-short reviews, punctuation/emoji removal, number-to-word conversion, lowercasing, stop-word removal, lemmatization |
+
+---
+
+## Repository Structure
+
+```
+data/
+  reviews_raw.jsonl          Raw scraped reviews (5,000 entries)
+  reviews_clean.jsonl        Cleaned and preprocessed reviews (4,278 entries)
+  dataset_metadata.json      App info, collection method, cleaning decisions
+  review_groups_manual.json  5 manually identified review groups
+  review_groups_auto.json    5 automatically clustered review groups (K-Means + TF-IDF)
+  review_groups_hybrid.json  Manually refined version of the auto groups
+
+personas/
+  personas_manual.json       5 manually crafted personas
+  personas_auto.json         5 LLM-generated personas (Groq / Llama-4-Scout)
+  personas_hybrid.json       Manually refined automated personas
+
+spec/
+  spec_manual.md             12 manually derived software requirements
+  spec_auto.md               15 automatically generated requirements
+  spec_hybrid.md             15 hybrid (auto + human refined) requirements
+
+tests/
+  tests_manual.json          24 manually written test scenarios
+  tests_auto.json            30 automatically generated test scenarios
+  tests_hybrid.json          30 hybrid test scenarios
+
+metrics/
+  metrics_manual.json        Metrics for the manual pipeline
+  metrics_auto.json          Metrics for the automated pipeline
+  metrics_hybrid.json        Metrics for the hybrid pipeline
+  metrics_summary.json       Cross-pipeline comparison table
+
+prompts/
+  prompt_auto.json           LLM prompt used for automated persona generation
+
+reflection/
+  reflection.md              Comparison and analysis of the three pipelines
+
+src/
+  00_validate_repo.py        Checks all required files are present
+  01_collect_or_import.py    Collects raw reviews from Google Play
+  02_clean.py                Cleans raw reviews and produces reviews_clean.jsonl
+  03_manual_coding_template.py  Template helper for manual review coding
+  04_personas_manual.py      Loads and displays manual personas
+  05_personas_auto.py        Clusters reviews and generates personas via Groq API
+  06_spec_generate.py        Generates spec_auto.md from automated personas
+  07_tests_generate.py       Generates tests_auto.json from spec_auto.md
+  08_metrics.py              Computes all pipeline metrics
+  run_all.py                 Runs the full automated pipeline end-to-end
+```
+
+---
+
+## How to Run
+
+### Prerequisites
+
+```bash
+pip install google-play-scraper nltk scikit-learn groq
+python -c "import nltk; nltk.download('stopwords'); nltk.download('wordnet')"
+```
+
+Set your Groq API key (required for automated persona and spec generation):
+
+```bash
+export GROQ_API_KEY=your_key_here
+```
+
+### Validate the repository structure
+
+```bash
+python3 src/00_validate_repo.py
+```
+
+### Run the full automated pipeline
+
+```bash
+python3 src/run_all.py
+```
+
+This will execute in order:
+1. `src/01_collect_or_import.py` — collect raw reviews
+2. `src/02_clean.py` — clean and preprocess
+3. `src/05_personas_auto.py` — cluster and generate personas (requires `GROQ_API_KEY`)
+4. `src/06_spec_generate.py` — generate automated specification
+5. `src/07_tests_generate.py` — generate automated tests
+6. `src/08_metrics.py` — compute all pipeline metrics
+
+### Recompute metrics only
+
+```bash
+python3 src/08_metrics.py
+```
+
+---
+
+## Metrics Summary
+
+| Metric | Manual | Automated | Hybrid |
+|---|---|---|---|
+| Dataset size | 4,278 | 4,278 | 4,278 |
+| Persona count | 5 | 5 | 5 |
+| Requirements count | 12 | 15 | 15 |
+| Tests count | 24 | 30 | 30 |
+| Review coverage ratio | 0.0152 | 1.0 | 1.0 |
+| Traceability ratio | 1.0 | 1.0 | 1.0 |
+| Testability rate | 1.0 | 1.0 | 1.0 |
+| Ambiguity ratio | 0.4167 | 0.2667 | 0.5333 |
+
+See `metrics/metrics_summary.json` for the machine-readable version.
+
+---
+
+## Notes
+
+- The Google Play Scraper API limits single-session scraping. 5,000 reviews were requested; the API returned a subset which after deduplication and cleaning yielded 4,278 clean reviews.
+- Manual and hybrid pipeline artifacts were created by hand and are not regenerated by `run_all.py`. Only the automated pipeline steps are programmatic.
+- See `reflection/reflection.md` for a detailed analysis comparing the three pipelines.

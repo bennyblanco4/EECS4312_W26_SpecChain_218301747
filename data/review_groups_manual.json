@@ -2,11 +2,68 @@
   "groups": [
     {
       "group_id": "G1",
-      "theme": "App crashes during activity logging, THIS IS A AN EXAMPLE, PLEASE REMOVE ",
-      "review_ids": ["rev_12", "rev_33", "rev_45", "rev_89"],
+      "theme": "Subscription and paywall frustration",
+      "description": "Users express frustration that most meaningful features are locked behind a paid subscription, leaving the free version too limited to be useful for those seeking real mental health support.",
+      "review_ids": ["rev_2","rev_23","rev_31","rev_32","rev_36","rev_48","rev_56","rev_57","rev_69","rev_80","rev_96","rev_110","rev_118","rev_126","rev_258"],
       "example_reviews": [
-        "The app crashes every time I log my run.",
-        "Logging workouts causes the app to freeze."
+        "Everything but the introduction is paywalled. Downloaded for the mental health resources, but will use something that offers a chance to test the benefits before charging.",
+        "Listen, if 90 percent of the app is unusable without purchasing a subscription just make the app paid instead. Otherwise, it just feels exploitative.",
+        "Puts results behind a paywall after using for 14 days, thus making it useless",
+        "What a useless app, answered questions for 14 days to get a report which told me my mental health was poor.",
+        "just a money grab like the rest of them. If u don't pay, your wasting your time."
+      ]
+    },
+    {
+      "group_id": "G2",
+      "theme": "Daily mood check-in and emotional self-tracking",
+      "description": "Users who find strong value in the app's core feature of daily check-ins and mood tracking. They appreciate monitoring emotional patterns over time and gaining self-awareness about their mental state.",
+      "review_ids": ["rev_8","rev_33","rev_35","rev_47","rev_71","rev_90","rev_92","rev_98","rev_103","rev_113","rev_129","rev_145","rev_883","rev_966","rev_1316"],
+      "example_reviews": [
+        "3x Daily check in to track mood. Good pace.",
+        "Great free mood tracker with actually helpful questions.",
+        "This app is very helpful for tracking my moods and depressive episodes.",
+        "Great for mood tracking and helpful in practicing self-awareness and recognizing your patterns.",
+        "The questions make me more mindful of my emotions."
+      ]
+    },
+    {
+      "group_id": "G3",
+      "theme": "Notification and reminder reliability",
+      "description": "Users discuss their experience with the notification and reminder system. Some rely on reminders to maintain their check-in habit, while others report missed or unreliable notifications, wrong timing, or overly frequent alerts.",
+      "review_ids": ["rev_41","rev_101","rev_128","rev_132","rev_200","rev_203","rev_233","rev_236","rev_269","rev_285","rev_298","rev_358"],
+      "example_reviews": [
+        "not getting notifications to answer the questions",
+        "I hate the reminders come at odd times and I miss them.",
+        "lately it has not been giving me notifications... please fix the bug",
+        "My only critique is that it's a lot of notifications, other than that it's great!",
+        "Being able to set up a reminder for 3 times a day to record your current mindset helps me a lot."
+      ]
+    },
+    {
+      "group_id": "G4",
+      "theme": "Data privacy and account security concerns",
+      "description": "Users express concerns about mandatory account creation, sharing of sensitive health data with third parties, inability to use the app anonymously, and lack of security features such as PIN or biometric lock.",
+      "review_ids": ["rev_20","rev_27","rev_34","rev_44","rev_79","rev_106","rev_176","rev_245","rev_273","rev_279","rev_384"],
+      "example_reviews": [
+        "It shares device IDs with third parties which is not optional. Tracking is an absolute no go with apps that handle data this sensitive.",
+        "Right away requires a user account and the mandatory terms include agreeing to the sharing of your personal and health information.",
+        "It is not possible to use anonymously as advertised. In setup I have to log in or create an account. No option to skip.",
+        "Would be better if you could secure with a pin code.",
+        "The app often logs me out and disables the app lock. I would like to keep my data safe."
+      ]
+    },
+    {
+      "group_id": "G5",
+      "theme": "Therapeutic exercises and mental health education",
+      "description": "Users who appreciate the app's therapeutic content, including CBT-based exercises, mindfulness activities, structured programs, and educational resources. Many note the content feels professionally and clinically grounded.",
+      "review_ids": ["rev_7","rev_9","rev_11","rev_17","rev_28","rev_38","rev_53","rev_62","rev_67","rev_77","rev_85","rev_102"],
+      "example_reviews": [
+        "This app helped me understand my symptoms and patterns, making it easier to navigate my mental health day to day.",
+        "I am 3 weeks into the mindfulness. It has a place to write down my thoughts. This is like a safe place where you can be honest.",
+        "It was recommended by my doctor. I enjoy the exercises a lot.",
+        "This application offers a wide range of beneficial topics and articles, as well as mental and emotional support skills.",
+        "The activities are super useful and informative."
       ]
     }
-  ]}
+  ]
+}

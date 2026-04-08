@@ -1,13 +1,79 @@
-{  "groups": [
+{
+  "groups": [
     {
       "group_id": "H1",
-      "theme": "Workout logging failures during activity tracking",
-      "review_ids": ["rev_12", "rev_33", "rev_41", "rev_92"],
+      "theme": "General app helpfulness and mental health awareness",
+      "description": "Users express broad appreciation for the app being informative and helpful for their mental health awareness. These reviews are generally brief and positive, focusing on the app's overall value without specifying particular features.",
+      "review_ids_source": "A1 (unchanged)",
+      "review_ids_count": 501,
       "example_reviews": [
-        "The app crashes whenever I try to log a run.",
-        "Logging workouts causes the app to freeze."
+        "This app is amazing. I have learned so much about myself and my mental health. The insights are super helpful.",
+        "A very helpful tool to monitor your mental health.",
+        "It's been very helpful getting me to understand what's going on and helping me to voice it even if it's to myself.",
+        "Extremely helpful to track my mood as someone who hates journaling.",
+        "Super helpful app"
       ],
-      "notes": "Removed one unrelated review about login problems from the original automated group."
+      "notes": "Group retained as-is from the automated pipeline. The theme accurately captures the cluster, which is a broad category of positive endorsements."
+    },
+    {
+      "group_id": "H2",
+      "theme": "Daily check-in reminders and subscription frustration",
+      "description": "This group captures users who rely on daily check-in prompts and notifications but are frustrated by the paywall that restricts meaningful features after the free period. The automated group (A2) correctly identified both concerns but the theme was too long and vague.",
+      "review_ids_source": "A2 (theme refined, same reviews)",
+      "review_ids_count": 2101,
+      "example_reviews": [
+        "It doesn't send the notifications, which is inconvenient, coz I tend to forget.",
+        "I love the checking in a few times a day sometimes it's good to remember you again.",
+        "Great idea to hide behind a pay wall for people who could really use some help.",
+        "I get reminded of myself and checking on how I am. Leading questions are somehow helping me to get in tune.",
+        "yet to receive my two week insight but loving the questions asked so far"
+      ],
+      "notes": "Automated theme 'Daily check-ins, reminders, and mixed subscription concerns' was revised to 'Daily check-in reminders and subscription frustration' for clarity. The large cluster size (2101 reviews) reflects that this is the dominant user concern. Reviews were not redistributed because both sub-themes (reminders and subscriptions) are genuinely intertwined in user experience."
+    },
+    {
+      "group_id": "H3",
+      "theme": "Personalized insights and question quality",
+      "description": "Users who value the quality and depth of insights the app provides. They appreciate pattern detection and personalized feedback, but note that questions can be repetitive or limited in scope. The automated label was corrected to remove 'app feedback quality' which was misleading.",
+      "review_ids_source": "A3 (theme refined, same reviews)",
+      "review_ids_count": 565,
+      "example_reviews": [
+        "MoodPath noticed when I was doing better and let me know! It felt like positive reinforcement.",
+        "I like it I wish the questions were different.",
+        "Really good so far. Only downloaded it recently but it's made me happy to see that there's an app like this.",
+        "It was okay, didn't really give someone like me a lot of insight or real generalization as to how to point myself in a positive position.",
+        "I kept forgetting to use this so my progress kept resetting."
+      ],
+      "notes": "Renamed from 'Personalized insights, self-reflection, and app feedback quality' to 'Personalized insights and question quality'. Removed 'app feedback quality' from the theme as it is ambiguous and does not reflect the review content."
+    },
+    {
+      "group_id": "H4",
+      "theme": "Mood tracking consistency and temporal monitoring",
+      "description": "Users focus on tracking mood changes over multiple time periods. They value temporal continuity of mood data and appreciate visual summaries of how their mood evolves over days and weeks. The automated theme was renamed to better emphasize the longitudinal aspect.",
+      "review_ids_source": "A4 (theme refined, same reviews)",
+      "review_ids_count": 412,
+      "example_reviews": [
+        "Keeps me aware of my moods! Also sends me notifications which I love.",
+        "I quite appreciate being able to keep track of my mood and verbalize what specifically is off about it in different parts of my day.",
+        "It is a great way to track your mood through the day and week if you have been having problems with your mood.",
+        "A great way to check in and keep track of how my mood changes over time.",
+        "Helped so much to track my mood so far so good"
+      ],
+      "notes": "Renamed from 'Mood tracking across time periods' to 'Mood tracking consistency and temporal monitoring' to better emphasize the user's concern with maintaining consistent data over time, not just viewing historical data."
+    },
+    {
+      "group_id": "H5",
+      "theme": "Emotional self-understanding and mental health symptom recognition",
+      "description": "Users who credit the app with helping them better understand their own emotions and recognize mental health symptoms. They appreciate the app's ability to help them name feelings and identify anxiety or depression patterns. An unsupported automated claim about 'guided coping exercises' was removed from the persona description.",
+      "review_ids_source": "A5 (theme refined, same reviews)",
+      "review_ids_count": 699,
+      "example_reviews": [
+        "Helped me arrange my own emotions and understand more how I was feeling.",
+        "This app is a very simple way to help you learn more about possible mental disorders and their symptoms.",
+        "It helps to be able to track my moods bc I differ from anxiety and severe depression so it helps to kind of predict a bout.",
+        "Great to help assess emotions if you struggle to understand yourself.",
+        "I have tried many, many, many self help apps. This is the first one that has kept me engaged and offers intelligent, realistic advice."
+      ],
+      "notes": "Renamed from 'Emotional self-discovery and understanding mental health' to a more precise theme. Removed the word 'discovery' which implies active exploration beyond what reviews support. Added 'symptom recognition' to reflect that many reviews mention depression and anxiety identification."
     }
   ]
 }

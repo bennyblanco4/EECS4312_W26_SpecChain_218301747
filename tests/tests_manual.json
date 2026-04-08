@@ -1,16 +1,255 @@
-
 {
   "tests": [
     {
-      "test_id": "T_auto_1",
+      "test_id": "T_manual_1a",
       "requirement_id": "FR1",
-      "scenario": "Workout Logging Stability",
+      "scenario": "Free vs paid feature list shown before onboarding",
       "steps": [
-        "Open the workout logging screen",
-        "Enter workout details",
-        "Submit the workout"
+        "Launch the app as a new user for the first time",
+        "Observe the first screen presented"
       ],
-      "expected_result": "The workout is saved successfully and the application remains stable."
+      "expected_result": "A screen listing free and premium features is displayed before any personal questions or account creation prompts appear."
+    },
+    {
+      "test_id": "T_manual_1b",
+      "requirement_id": "FR1",
+      "scenario": "Feature list is visible without scrolling past onboarding questions",
+      "steps": [
+        "Launch the app as a new user",
+        "Attempt to bypass the feature list screen and go directly to onboarding questions"
+      ],
+      "expected_result": "The system does not allow the user to start onboarding questions without first viewing the free vs paid feature summary."
+    },
+    {
+      "test_id": "T_manual_2a",
+      "requirement_id": "FR2",
+      "scenario": "Basic assessment summary available after 14-day free period without subscription",
+      "steps": [
+        "Complete 14 days of check-in responses as a free-tier user",
+        "Navigate to the assessment results section"
+      ],
+      "expected_result": "A basic summary of mood trends and a general recommendation is displayed without any subscription prompt or paywall."
+    },
+    {
+      "test_id": "T_manual_2b",
+      "requirement_id": "FR2",
+      "scenario": "Subscription upsell does not block access to basic results",
+      "steps": [
+        "Complete 14 days of check-in responses as a free-tier user",
+        "Tap on the results/report section",
+        "Observe whether a paywall or subscription prompt blocks the content"
+      ],
+      "expected_result": "At minimum a basic mood trend summary is shown. A subscription upsell may be presented as an option but must not be the only content displayed."
+    },
+    {
+      "test_id": "T_manual_3a",
+      "requirement_id": "FR3",
+      "scenario": "Daily check-in completes within two minutes",
+      "steps": [
+        "Open the daily check-in screen",
+        "Start a timer",
+        "Complete all check-in questions",
+        "Submit the response and stop the timer"
+      ],
+      "expected_result": "The entire check-in flow takes less than two minutes from opening to submission confirmation."
+    },
+    {
+      "test_id": "T_manual_3b",
+      "requirement_id": "FR3",
+      "scenario": "Check-in response is saved to mood history immediately",
+      "steps": [
+        "Complete and submit one check-in session",
+        "Navigate to the mood history section"
+      ],
+      "expected_result": "The just-completed check-in entry appears in the mood history list with the correct timestamp and scores."
+    },
+    {
+      "test_id": "T_manual_4a",
+      "requirement_id": "FR4",
+      "scenario": "Mood history dashboard displays 7-day view",
+      "steps": [
+        "Log check-ins for at least 7 consecutive days",
+        "Navigate to the mood history dashboard",
+        "Select the 7-day time range"
+      ],
+      "expected_result": "A chart or graph is displayed showing aggregated mood scores for the past 7 days, with one data point per day."
+    },
+    {
+      "test_id": "T_manual_4b",
+      "requirement_id": "FR4",
+      "scenario": "Mood history dashboard supports 30-day and 90-day views",
+      "steps": [
+        "Navigate to the mood history dashboard",
+        "Switch between the 30-day and 90-day time range options"
+      ],
+      "expected_result": "The dashboard updates to show the correct data range for each selected period. All available check-in data within the range is reflected in the chart."
+    },
+    {
+      "test_id": "T_manual_5a",
+      "requirement_id": "FR5",
+      "scenario": "User can configure three reminders at custom times",
+      "steps": [
+        "Open app settings and navigate to the reminders section",
+        "Enable reminders and set three different custom times (e.g., 8:00, 13:00, 20:00)",
+        "Save the settings"
+      ],
+      "expected_result": "The settings are saved and the system schedules notifications for all three specified times. The settings screen confirms the three reminder times are active."
+    },
+    {
+      "test_id": "T_manual_5b",
+      "requirement_id": "FR5",
+      "scenario": "Push notification arrives within five minutes of scheduled time",
+      "steps": [
+        "Set a reminder time for two minutes from the current time",
+        "Lock the phone screen and wait"
+      ],
+      "expected_result": "A push notification from MindDoc arrives within five minutes of the configured time."
+    },
+    {
+      "test_id": "T_manual_6a",
+      "requirement_id": "FR6",
+      "scenario": "Notification delivered after app has been closed for over one hour",
+      "steps": [
+        "Set a reminder time for 90 minutes from now",
+        "Close the app completely (force stop)",
+        "Wait for the scheduled notification time"
+      ],
+      "expected_result": "The push notification is delivered at the scheduled time even though the app was closed for more than one hour."
+    },
+    {
+      "test_id": "T_manual_6b",
+      "requirement_id": "FR6",
+      "scenario": "Battery optimization guidance prompt is shown on first reminder setup",
+      "steps": [
+        "Set up the first reminder on a new installation",
+        "Observe whether a battery optimization guidance prompt appears"
+      ],
+      "expected_result": "The system displays a one-time prompt explaining how to exclude MindDoc from battery optimization, with a direct link or button to the device's battery settings."
+    },
+    {
+      "test_id": "T_manual_7a",
+      "requirement_id": "FR7",
+      "scenario": "User can access check-in in anonymous mode without account creation",
+      "steps": [
+        "Launch the app as a new user",
+        "Select the anonymous or guest mode option",
+        "Attempt to complete a daily check-in"
+      ],
+      "expected_result": "The check-in screen opens and the user can complete and submit a check-in without having created an account or provided any personal information."
+    },
+    {
+      "test_id": "T_manual_7b",
+      "requirement_id": "FR7",
+      "scenario": "Guest mode data is stored locally and not transmitted",
+      "steps": [
+        "Enable guest mode and complete several check-ins",
+        "Disable the device's internet connection",
+        "Navigate to the mood history section"
+      ],
+      "expected_result": "Mood history from guest mode is fully accessible without an internet connection, confirming data is stored locally on the device."
+    },
+    {
+      "test_id": "T_manual_8a",
+      "requirement_id": "FR8",
+      "scenario": "App lock activates after one minute of background inactivity",
+      "steps": [
+        "Enable app lock with a PIN in settings",
+        "Switch to another app and wait two minutes",
+        "Return to MindDoc"
+      ],
+      "expected_result": "The PIN entry screen is displayed and no personal mood or journal data is visible until the correct PIN is entered."
+    },
+    {
+      "test_id": "T_manual_8b",
+      "requirement_id": "FR8",
+      "scenario": "App lock persists after force close and relaunch",
+      "steps": [
+        "Enable PIN lock and configure a PIN",
+        "Force close the app",
+        "Relaunch the app"
+      ],
+      "expected_result": "The PIN entry screen is displayed immediately upon relaunch and no content is visible until authentication succeeds."
+    },
+    {
+      "test_id": "T_manual_9a",
+      "requirement_id": "FR9",
+      "scenario": "Five therapeutic exercise modules available in free tier",
+      "steps": [
+        "Log in as a free-tier user",
+        "Navigate to the exercises or programs section"
+      ],
+      "expected_result": "At least five complete exercise modules are listed and accessible without a subscription prompt. Each module is fully interactive."
+    },
+    {
+      "test_id": "T_manual_9b",
+      "requirement_id": "FR9",
+      "scenario": "Each free exercise module includes description, steps, and completion confirmation",
+      "steps": [
+        "Open any free-tier exercise module",
+        "Complete all steps of the exercise"
+      ],
+      "expected_result": "The module displays: a title and description, step-by-step instructions, and a completion confirmation screen or checkmark after all steps are finished."
+    },
+    {
+      "test_id": "T_manual_10a",
+      "requirement_id": "FR10",
+      "scenario": "Educational info card displayed when recurring mood pattern is detected",
+      "steps": [
+        "Log consistently low morning mood scores for seven consecutive days",
+        "Navigate to the mood summary or insights screen"
+      ],
+      "expected_result": "At least one educational information card relevant to the detected pattern (e.g., low morning mood) is displayed, with a plain-language explanation referencing a psychological framework."
+    },
+    {
+      "test_id": "T_manual_10b",
+      "requirement_id": "FR10",
+      "scenario": "Educational card references a recognized psychological framework",
+      "steps": [
+        "Trigger an educational card by logging a recurring pattern",
+        "Read the content of the displayed information card"
+      ],
+      "expected_result": "The card explicitly mentions or is linked to a recognized framework (e.g., CBT, mindfulness-based stress reduction) and does not contain generic wellness advice only."
+    },
+    {
+      "test_id": "T_manual_11a",
+      "requirement_id": "FR11",
+      "scenario": "PDF export contains mood chart and check-in data",
+      "steps": [
+        "Log at least 10 check-in responses across multiple days",
+        "Navigate to the mood history screen",
+        "Initiate a PDF export"
+      ],
+      "expected_result": "A PDF is generated containing a mood trend chart and a table of check-in scores with dates. The PDF is downloadable or shareable from the device."
+    },
+    {
+      "test_id": "T_manual_11b",
+      "requirement_id": "FR11",
+      "scenario": "PDF is shareable via native device share menu",
+      "steps": [
+        "Generate a PDF export",
+        "Tap the share button"
+      ],
+      "expected_result": "The device's native share menu opens, allowing the user to send the PDF via email, messaging apps, or cloud storage."
+    },
+    {
+      "test_id": "T_manual_12a",
+      "requirement_id": "FR12",
+      "scenario": "Plain-language privacy summary displayed on first launch",
+      "steps": [
+        "Uninstall and reinstall the app",
+        "Launch the app for the first time"
+      ],
+      "expected_result": "A privacy consent screen is displayed showing a summary (not only a link) that lists data types collected, third-party sharing practices, and data deletion steps."
+    },
+    {
+      "test_id": "T_manual_12b",
+      "requirement_id": "FR12",
+      "scenario": "User must acknowledge privacy summary before proceeding",
+      "steps": [
+        "Launch the app for the first time",
+        "Attempt to skip the privacy summary without acknowledging it"
+      ],
+      "expected_result": "The app does not allow the user to proceed to onboarding or any other screen until they have explicitly acknowledged the privacy summary (e.g., by tapping an Accept button)."
     }
   ]
 }

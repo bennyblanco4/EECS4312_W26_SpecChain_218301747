@@ -1,0 +1,31 @@
+{
+  "app_name": "MindDoc: Mental Health Support",
+  "app_id": "de.moodpath.android",
+  "platform": "Google Play Store",
+  "collection_method": "google-play-scraper library (python), sorted by newest, English reviews",
+  "collection_date": "2026-04-06",
+  "raw_dataset_size": 5000,
+  "final_dataset_size": 4278,
+  "cleaning_decisions": {
+    "removed_duplicates": 78,
+    "removed_empty": 0,
+    "removed_short_reviews": 644,
+    "min_raw_length_chars": 10,
+    "min_clean_length_tokens": 3,
+    "steps": [
+      "Remove duplicate reviews (by normalized content)",
+      "Remove empty/null entries",
+      "Remove reviews shorter than 10 raw characters",
+      "Remove emojis and non-ASCII characters",
+      "Remove URLs",
+      "Remove punctuation and special characters",
+      "Convert numbers to English words",
+      "Convert to lowercase",
+      "Remove extra whitespace",
+      "Remove English stop words (NLTK)",
+      "Lemmatize tokens (NLTK WordNetLemmatizer)",
+      "Remove reviews with fewer than 3 tokens after cleaning"
+    ]
+  },
+  "note": "MindDoc has approximately 45,000+ reviews on Google Play. We extracted the 5,000 most recent English reviews due to API limits."
+}

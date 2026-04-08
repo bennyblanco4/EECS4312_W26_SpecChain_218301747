@@ -1,0 +1,141 @@
+{
+  "personas": [
+    {
+      "id": "P_auto_A1",
+      "name": "Mindful Tracker",
+      "description": "Individual seeking to understand and manage their mental health through tracking and reflection",
+      "derived_from_group": "A1",
+      "goals": [
+        "Understand and track mental health patterns",
+        "Find helpful insights and information to support mental well-being"
+      ],
+      "pain_points": [
+        "Difficulty articulating emotions or mental state",
+        "Limited time or motivation for journaling or reflection"
+      ],
+      "context": [
+        "Currently experiencing stress or uncertainty (e.g., due to Covid)",
+        "Seeking a simple and calming tool for mental health support"
+      ],
+      "constraints": [
+        "Prefers simple and easy-to-use features",
+        "Values a calming and inviting app design"
+      ],
+      "evidence_reviews": [
+        "rev_3546",
+        "rev_4134",
+        "rev_892"
+      ]
+    },
+    {
+      "id": "P_auto_A2",
+      "name": "Mindful Tracker",
+      "description": "A mentally health-conscious individual who actively seeks tools to monitor and improve their emotional wellbeing.",
+      "derived_from_group": "A2",
+      "goals": [
+        "Effectively track and manage mental health",
+        "Gain insights into emotional wellbeing",
+        "Find reliable support and resources"
+      ],
+      "pain_points": [
+        "Difficulty in accurately expressing feelings through limited question formats",
+        "Occasional confusion with certain questions"
+      ],
+      "context": [
+        "Actively managing mental health",
+        "Seeking supportive tools and resources",
+        "Willing to invest time and potentially money in mental health"
+      ],
+      "constraints": [
+        "Limited time for mental health tracking",
+        "Potential financial constraints for premium features"
+      ],
+      "evidence_reviews": [
+        "rev_616",
+        "rev_3950",
+        "rev_249"
+      ]
+    },
+    {
+      "id": "P_auto_A3",
+      "name": "Emotionally Supportive User",
+      "description": "A user seeking emotional support and validation through a mental health tracking app",
+      "derived_from_group": "A3",
+      "goals": [
+        "To feel emotionally supported and understood",
+        "To track and gain insights into their feelings and emotions"
+      ],
+      "pain_points": [
+        "Feeling unheard or uncared for",
+        "Limited self-awareness of their emotional state"
+      ],
+      "context": [
+        "Experiencing mental health challenges",
+        "Seeking a sense of control and empowerment"
+      ],
+      "constraints": [
+        "May have limited time or motivation to engage with complex mental health tools",
+        "May be experiencing emotional distress or vulnerability"
+      ],
+      "evidence_reviews": [
+        "rev_4945",
+        "rev_3942",
+        "rev_2212"
+      ]
+    },
+    {
+      "id": "P_auto_A4",
+      "name": "Mindful Tracker",
+      "description": "Individuals who actively track their mental health and mood to gain insights and improve their well-being",
+      "derived_from_group": "A4",
+      "goals": [
+        "Monitor and understand their mental health and mood patterns",
+        "Identify triggers and track progress over time"
+      ],
+      "pain_points": [
+        "Limited ability to track related factors like sleep, food, and cycle patterns",
+        "Desire for more comprehensive tracking features"
+      ],
+      "context": [
+        "Daily life, managing mental health and well-being",
+        "Reflecting on past experiences and tracking progress"
+      ],
+      "constraints": [
+        "Limited time or effort to dedicate to tracking",
+        "Potential difficulties in maintaining consistent tracking habits"
+      ],
+      "evidence_reviews": [
+        "rev_1598",
+        "rev_4739",
+        "rev_2348"
+      ]
+    },
+    {
+      "id": "P_auto_A5",
+      "name": "Hopeful Helper",
+      "description": "Individual seeking mental health support and tools to manage their well-being",
+      "derived_from_group": "A5",
+      "goals": [
+        "Manage mental health effectively",
+        "Find comfort and understanding through digital means"
+      ],
+      "pain_points": [
+        "Struggling with anxiety and depression",
+        "Difficulty expressing thoughts and feelings"
+      ],
+      "context": [
+        "Actively seeking mental health support and resources",
+        "Values ease of use and simple design in digital tools"
+      ],
+      "constraints": [
+        "May have limited technical expertise",
+        "Seeking reliable and trustworthy support"
+      ],
+      "evidence_reviews": [
+        "rev_2128",
+        "rev_484",
+        "rev_3401"
+      ]
+    }
+  ]
+}

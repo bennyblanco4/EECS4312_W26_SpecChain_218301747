@@ -1,31 +1,139 @@
 {
   "personas": [
     {
-      "id": "P_hybrid_1",
-      "name": "Frequent Fitness Logger",
-      "description": "A user who depends on the app for regular workout tracking and expects logging to work reliably during or immediately after exercise.",
+      "id": "P_hybrid_H1",
+      "name": "Broad Wellness Adopter",
+      "description": "A user who downloaded MindDoc out of general curiosity about mental health self-care. They find the app broadly helpful and informative but engage with it at a surface level, using it primarily for general mental health awareness rather than deep structured programming or systematic mood tracking.",
       "derived_from_group": "H1",
       "goals": [
-        "Log workouts quickly",
-        "Track activities without interruption"
+        "Use an accessible mental wellness app without needing prior knowledge",
+        "Gain basic awareness of their emotional and mental health patterns",
+        "Find a low-effort tool that provides immediate, understandable value"
       ],
       "pain_points": [
-        "The app crashes while saving workouts",
-        "Previously entered activity data may disappear"
+        "The app may lack depth for users who want more than surface-level engagement",
+        "Some features may feel inaccessible or confusing on first use",
+        "Value from the app may plateau quickly without guided progression"
       ],
       "context": [
-        "Using the app during exercise sessions",
-        "Using the app outdoors or while moving"
+        "New to mental health apps or self-monitoring tools",
+        "Uses the app casually rather than consistently",
+        "May have downloaded the app after a difficult period or at a friend's recommendation"
       ],
       "constraints": [
-        "Workout logging must complete without crashing",
-        "Saved workout data must persist"
+        "Expects the app to be simple and non-overwhelming from the start",
+        "Needs the app to provide immediate, visible value without a steep learning curve"
       ],
-      "evidence_reviews": [
-        "rev_12",
-        "rev_41"
+      "evidence_reviews": ["rev_892", "rev_4134", "rev_1123"],
+      "notes": "Persona description unchanged from automated version. The automated output was already grounded in the review cluster. Minor wording clarification added to describe 'surface-level engagement' more precisely."
+    },
+    {
+      "id": "P_hybrid_H2",
+      "name": "Reminder-Dependent Check-in User",
+      "description": "A user who has adopted MindDoc's daily check-in habit and depends heavily on push notification reminders to maintain it. They are frustrated when notifications fail to arrive or when useful features require a paid subscription, leaving them unable to get full value from their tracking data.",
+      "derived_from_group": "H2",
+      "goals": [
+        "Receive reliable push notification reminders to complete daily check-ins",
+        "Maintain a consistent emotional logging habit with minimal self-prompting",
+        "Access meaningful insights from daily check-ins without paying for a subscription"
       ],
-      "notes": "Refined the persona description and removed an unsupported assumption about synchronization."
+      "pain_points": [
+        "Push notifications sometimes stop arriving without explanation",
+        "The free version provides limited visibility into patterns and reports",
+        "Subscription cost is a barrier for users who need the feature most"
+      ],
+      "context": [
+        "Uses the app as part of a daily routine and relies on it for emotional self-monitoring",
+        "Has low intrinsic motivation to check in without external prompts",
+        "May be managing depression, anxiety, or low energy, making self-prompting unreliable"
+      ],
+      "constraints": [
+        "Notification delivery must be reliable and consistent across device states",
+        "At least basic check-in results and summaries must be available in the free tier"
+      ],
+      "evidence_reviews": ["rev_2132", "rev_236", "rev_249"],
+      "notes": "Renamed from 'Routine Check-in User with Subscription Concerns' to 'Reminder-Dependent Check-in User' to better reflect the persona's primary dependency. Automated description claimed users 'value the habit of regular emotional check-ins' which was vague. Revised to specify the notification dependency and clarify the subscription frustration is a secondary but important concern."
+    },
+    {
+      "id": "P_hybrid_H3",
+      "name": "Pattern-Seeking Self-Reflector",
+      "description": "A user who engages deeply with the app's insight and pattern detection features. They want the app to surface meaningful, personalized feedback based on their check-in history, and are disappointed when questions feel repetitive or insights feel generic. They are motivated to understand their own emotional patterns but need the app to adapt to their data.",
+      "derived_from_group": "H3",
+      "goals": [
+        "Receive meaningful, personalized insights based on their check-in history",
+        "Experience question variety across sessions to avoid repetitiveness",
+        "Understand their emotional triggers and recurring patterns through the app"
+      ],
+      "pain_points": [
+        "Questions can feel repetitive over extended use",
+        "Insights may be too generic and not clearly linked to the user's own data",
+        "Tracking progress resets if the habit is interrupted, discouraging consistency"
+      ],
+      "context": [
+        "Has been using the app for several weeks or months",
+        "Actively reads and reflects on the insights and analysis sections",
+        "May be supplementing or preparing for professional therapy using the app's data"
+      ],
+      "constraints": [
+        "Expects the app to adapt its questions based on previous check-in responses over time",
+        "Needs insights to reference the user's actual data rather than provide general advice"
+      ],
+      "evidence_reviews": ["rev_976", "rev_285", "rev_2016"],
+      "notes": "Renamed from 'Insight-Seeking Self-Reflector' to 'Pattern-Seeking Self-Reflector' to be more specific. Removed the automated claim that users are 'motivated by seeing the app adapt to their mental health patterns' as this was unsupported speculation. Added the pain point about progress resetting, which is directly referenced in rev_2016."
+    },
+    {
+      "id": "P_hybrid_H4",
+      "name": "Long-Term Emotional Trend Monitor",
+      "description": "A user who relies on MindDoc as a long-term mood journal. They check in regularly and depend on the app's temporal tracking features to observe how their mood changes across days, weeks, and months. Consistency in their check-in data is important, and they may share trend reports with a healthcare provider.",
+      "derived_from_group": "H4",
+      "goals": [
+        "Track mood fluctuations consistently over weeks and months",
+        "Identify long-term emotional trends and recurring mood patterns",
+        "Access historical mood data to support conversations with a therapist or doctor"
+      ],
+      "pain_points": [
+        "Long-term trend views and detailed reports may require a premium subscription",
+        "Gaps in tracking data caused by missed check-ins affect the quality of trend analysis",
+        "The temporal analysis could offer more granular breakdowns (e.g., by time of day)"
+      ],
+      "context": [
+        "Uses the app consistently over an extended period as part of a mental health management routine",
+        "May have a diagnosed mental health condition such as depression or bipolar disorder",
+        "Shares mood data with a therapist or healthcare team to inform treatment"
+      ],
+      "constraints": [
+        "Mood history must be preserved and accessible for at least 12 months without data loss",
+        "Visual trend charts must accurately represent available data for all supported time ranges"
+      ],
+      "evidence_reviews": ["rev_1683", "rev_3291", "rev_3840"],
+      "notes": "Renamed from 'Long-Term Mood Monitor' to 'Long-Term Emotional Trend Monitor' to be more precise. Automated description mentioned 'quantified self-knowledge' which is not directly supported by cluster reviews. Replaced with more specific references to healthcare discussions. Added the constraint on 12-month history retention based on evidence from multiple reviews about long-term use."
+    },
+    {
+      "id": "P_hybrid_H5",
+      "name": "Mental Health Symptom-Aware User",
+      "description": "A user who uses MindDoc to better understand their own mental health symptoms, particularly anxiety and depression. They credit the app with helping them recognize and name emotional states they previously struggled to articulate. They need the app to handle sensitive topics with care and to provide responses grounded in evidence-based practice.",
+      "derived_from_group": "H5",
+      "goals": [
+        "Develop a clearer vocabulary and understanding of their emotional states",
+        "Recognize patterns in anxiety, depression, or other mental health symptoms",
+        "Use the app's insights as a bridge to professional help or ongoing self-management"
+      ],
+      "pain_points": [
+        "App responses to mentions of severe distress or self-harm must be handled sensitively",
+        "Some therapeutic recommendations may feel generic rather than personalized",
+        "Transitioning from self-awareness to actionable coping strategies is not always clear"
+      ],
+      "context": [
+        "Managing or suspected of having anxiety, depression, or similar mental health challenges",
+        "Uses the app as a primary or supplementary self-care tool",
+        "May be in between therapy appointments or on a waiting list for professional support"
+      ],
+      "constraints": [
+        "The app must handle crisis-level disclosures with appropriate, non-dismissive responses",
+        "All emotional and mental health content must be evidence-based and non-judgmental"
+      ],
+      "evidence_reviews": ["rev_1785", "rev_4777", "rev_3137"],
+      "notes": "Renamed from 'Emotional Self-Discovery User' to 'Mental Health Symptom-Aware User' to better reflect the clinical dimension of this group's concerns. Automated description included unsupported claim that users rely on 'guided coping exercises' — this was removed as it belongs to a different group. Added the constraint on crisis disclosure handling based on rev_27 and similar reviews."
     }
   ]
 }

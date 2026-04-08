@@ -1,22 +1,140 @@
-{  "personas": [
+{
+  "personas": [
     {
       "id": "P1",
-      "name": "Frequent Activity Tracker",
-      "description": "A user who relies on the app to log workouts frequently and expects stable performance.",
+      "name": "Budget-Conscious Mental Health Seeker",
+      "description": "A user who downloaded MindDoc hoping to access meaningful mental health support for free, but feels misled when nearly all useful features are locked behind a subscription they cannot afford.",
       "derived_from_group": "G1",
       "goals": [
-        "Track workouts consistently",
-        "Log activity quickly"      ],
+        "Access mental health tools and resources without paying a subscription fee",
+        "Understand what the app offers before committing to a purchase",
+        "Use mood tracking and insight features to manage mental wellbeing at no cost"
+      ],
       "pain_points": [
-        "App crashes during logging",
-        "Workout data sometimes disappears"      ],
+        "Almost all features are behind a paywall after a short free period",
+        "The 14-day free assessment ends with a paywall rather than actionable insights",
+        "Feels deceived after investing time answering questions only to be asked to pay",
+        "Subscription pricing feels expensive relative to perceived free value"
+      ],
       "context": [
-        "Logging activities immediately after workouts",
-        "Using the app during outdoor exercise"      ],
+        "Cannot afford or is unwilling to pay for a mental health app subscription",
+        "May be in a financially vulnerable position where mental health support is most needed",
+        "Compares the app to free alternatives that offer more without payment"
+      ],
       "constraints": [
-        "Logging must be reliable",
-        "Data should not be lost"       ],
-      "evidence_reviews": [
-        "rev_12",
-        "rev_45"      ]
-    }  ] }
+        "Will not subscribe unless free features are genuinely useful",
+        "Expects transparency about what is free vs. paid before starting the onboarding"
+      ],
+      "evidence_reviews": ["rev_2", "rev_36", "rev_80", "rev_96"]
+    },
+    {
+      "id": "P2",
+      "name": "Daily Mood Tracker",
+      "description": "A user who relies on MindDoc's daily check-in questions to monitor their emotional wellbeing over time. They value the routine of multiple daily check-ins and appreciate the patterns and insights that emerge over weeks of consistent tracking.",
+      "derived_from_group": "G2",
+      "goals": [
+        "Log mood and emotions three times a day to detect patterns",
+        "Review weekly and monthly summaries to understand emotional trends",
+        "Use mood history to communicate mental state to a therapist",
+        "Build a consistent self-reflection habit"
+      ],
+      "pain_points": [
+        "Limited emotion vocabulary in the check-in options",
+        "Cannot easily export or share mood data with healthcare providers",
+        "Free version restricts access to detailed reports and long-term history"
+      ],
+      "context": [
+        "Uses the app daily as part of a mental health management routine",
+        "May also be working with a therapist and uses the app as a supplementary tool",
+        "Values quantified self-knowledge about emotional wellbeing"
+      ],
+      "constraints": [
+        "Needs check-in flow to be quick and frictionless",
+        "Expects mood history and reports to be accessible without heavy subscription requirements"
+      ],
+      "evidence_reviews": ["rev_33", "rev_103", "rev_129", "rev_145"]
+    },
+    {
+      "id": "P3",
+      "name": "Habit-Building Reminder Dependent",
+      "description": "A user who struggles to remember to check in with their mental health without prompts. They depend on push notifications from MindDoc to maintain their daily logging habit, but experience inconsistent or poorly timed notifications that disrupt their routine.",
+      "derived_from_group": "G3",
+      "goals": [
+        "Receive reliable push notifications at consistent, user-set times throughout the day",
+        "Maintain a daily check-in habit without having to remember manually",
+        "Customize the number and timing of daily reminders"
+      ],
+      "pain_points": [
+        "Notifications sometimes stop working without explanation",
+        "Notification timing is inflexible or arrives at inconvenient times",
+        "Easy to miss notifications leading to gaps in tracking data",
+        "Too many or too few notifications without fine-grained control"
+      ],
+      "context": [
+        "Has a busy schedule and relies on reminders to build and sustain habits",
+        "May deal with depression or low motivation, making self-prompted check-ins unreliable",
+        "Uses the notification as a trigger for a mindful pause during the day"
+      ],
+      "constraints": [
+        "Notification delivery must be reliable across Android versions and battery optimization modes",
+        "Must be able to schedule notifications at specific custom times"
+      ],
+      "evidence_reviews": ["rev_41", "rev_203", "rev_285", "rev_298"]
+    },
+    {
+      "id": "P4",
+      "name": "Privacy-Aware Mental Health User",
+      "description": "A user who is cautious about sharing sensitive mental health data with a mobile app. They are concerned about third-party data sharing, mandatory account creation, and lack of security features that would protect their personal health information.",
+      "derived_from_group": "G4",
+      "goals": [
+        "Use the app without sharing health data with third parties",
+        "Option to use the app anonymously or with minimal personal information",
+        "Protect mood and journal data with a PIN or biometric lock",
+        "Control what data is shared and with whom"
+      ],
+      "pain_points": [
+        "App requires mandatory account creation before any use",
+        "Terms of service require agreeing to data sharing with third parties",
+        "No PIN or biometric lock to protect sensitive in-app data",
+        "App does not function offline, raising concerns about data transmission"
+      ],
+      "context": [
+        "Treats mental health data as highly sensitive personal information",
+        "Aware of data privacy regulations and expects GDPR-compliant practices",
+        "May stop using the app if privacy concerns are not addressed"
+      ],
+      "constraints": [
+        "Will not use the app if mandatory data sharing cannot be disabled",
+        "Requires clear, plain-language privacy policy before creating an account"
+      ],
+      "evidence_reviews": ["rev_20", "rev_34", "rev_79", "rev_279"]
+    },
+    {
+      "id": "P5",
+      "name": "Structured Mental Health Learner",
+      "description": "A user who engages deeply with MindDoc's therapeutic exercises, educational content, and structured mindfulness programs. They appreciate the clinical foundation of the content and use it alongside or in preparation for professional therapy.",
+      "derived_from_group": "G5",
+      "goals": [
+        "Complete CBT-based and mindfulness exercises to develop coping strategies",
+        "Learn about mental health conditions through in-app educational content",
+        "Use structured programs (e.g., stress management, mindfulness) to improve wellbeing",
+        "Prepare topics or data to discuss with a therapist"
+      ],
+      "pain_points": [
+        "Most structured programs and exercises are locked behind the premium subscription",
+        "Content does not adapt dynamically to the user's current mental health state",
+        "Program completion tracking could be more visible"
+      ],
+      "context": [
+        "May have been recommended the app by a doctor, therapist, or mental health professional",
+        "Engages with the app as part of a broader self-improvement or mental health recovery journey",
+        "Values evidence-based, professional content over generic wellness tips"
+      ],
+      "constraints": [
+        "Needs access to at least a baseline set of exercises in the free tier",
+        "Exercises and programs must be clearly explained and clinically grounded"
+      ],
+      "evidence_reviews": ["rev_7", "rev_38", "rev_53", "rev_85"]
+    }
+  ]
+}

@@ -3,13 +3,335 @@
     {
       "test_id": "T_auto_1",
       "requirement_id": "FR_auto_1",
-      "scenario": "Logging a workout without crashing",
+      "scenario": "Valid Emotion Tracking Modal Display",
       "steps": [
-        "Open the workout logging screen",
-        "Enter workout details",
-        "Submit the workout"
+        "Launch the MindDoc app and navigate to the home screen",
+        "Tap on the 'Track Emotions' button",
+        "Verify the modal is displayed with a list of common emotions and a text input field"
       ],
-      "expected_result": "The workout is saved successfully and the application remains stable."
+      "expected_result": "A modal with a list of common emotions and a text input field is displayed"
+    },
+    {
+      "test_id": "T_auto_2",
+      "requirement_id": "FR_auto_1",
+      "scenario": "Edge Case - Multiple Taps on 'Track Emotions' Button",
+      "steps": [
+        "Launch the MindDoc app and navigate to the home screen",
+        "Tap on the 'Track Emotions' button multiple times",
+        "Verify the modal display behavior"
+      ],
+      "expected_result": "The modal with a list of common emotions and a text input field is displayed consistently without any errors or duplicates"
+    },
+    {
+      "test_id": "T_auto_3",
+      "requirement_id": "FR_auto_2",
+      "scenario": "Valid 7-day emotion log",
+      "steps": [
+        "Log emotions for 7 consecutive days with varying emotions",
+        "Navigate to the 'Insights' tab",
+        "Verify the displayed summary"
+      ],
+      "expected_result": "A personalized summary of mental health patterns is displayed, including common emotions and correlations based on the logged data"
+    },
+    {
+      "test_id": "T_auto_4",
+      "requirement_id": "FR_auto_2",
+      "scenario": "Insufficient emotion log data",
+      "steps": [
+        "Log emotions for less than 7 days",
+        "Navigate to the 'Insights' tab"
+      ],
+      "expected_result": "The system does not display a personalized summary of mental health patterns and indicates that more data is needed"
+    },
+    {
+      "test_id": "T_auto_5",
+      "requirement_id": "FR_auto_3",
+      "scenario": "Valid Prompt Selection",
+      "steps": [
+        "Navigate to the 'Journal' screen",
+        "Select a pre-defined prompt from the list",
+        "Verify that a text input field is displayed"
+      ],
+      "expected_result": "A text input field with a character limit is displayed, allowing the user to enter their reflection."
+    },
+    {
+      "test_id": "T_auto_6",
+      "requirement_id": "FR_auto_3",
+      "scenario": "Save Reflection",
+      "steps": [
+        "Navigate to the 'Journal' screen",
+        "Select a pre-defined prompt from the list",
+        "Enter a reflection in the text input field",
+        "Save the reflection"
+      ],
+      "expected_result": "The user's reflection is saved and can be reviewed in the future."
+    },
+    {
+      "test_id": "T_auto_7",
+      "requirement_id": "FR_auto_4",
+      "scenario": "Valid Text Input",
+      "steps": [
+        "Launch the MindDoc app and navigate to the mental health assessment section.",
+        "Encounter a question about feelings and emotions.",
+        "Input a response with 100 characters or more in the text field."
+      ],
+      "expected_result": "The system accepts the input and allows the user to proceed with the assessment."
+    },
+    {
+      "test_id": "T_auto_8",
+      "requirement_id": "FR_auto_4",
+      "scenario": "Character Limit Enforcement",
+      "steps": [
+        "Launch the MindDoc app and navigate to the mental health assessment section.",
+        "Encounter a question about feelings and emotions.",
+        "Attempt to input a response with less than 100 characters in the text field."
+      ],
+      "expected_result": "The system prevents the user from proceeding and provides an error message or warning to input at least 100 characters."
+    },
+    {
+      "test_id": "T_auto_9",
+      "requirement_id": "FR_auto_5",
+      "scenario": "Hover over a question with a simple explanation",
+      "steps": [
+        "Launch the MindDoc app and navigate to a mental health assessment",
+        "Start the assessment and locate a question with a simple explanation",
+        "Hover over the question"
+      ],
+      "expected_result": "A tooltip with a brief explanation of the question appears within 2 seconds"
+    },
+    {
+      "test_id": "T_auto_10",
+      "requirement_id": "FR_auto_5",
+      "scenario": "Hover over a question with a complex explanation",
+      "steps": [
+        "Launch the MindDoc app and navigate to a mental health assessment",
+        "Start the assessment and locate a question with a complex explanation",
+        "Hover over the question and wait for the tooltip to appear"
+      ],
+      "expected_result": "A tooltip with a clear and concise explanation of the question appears within 2 seconds, without overwhelming the user with too much information"
+    },
+    {
+      "test_id": "T_auto_11",
+      "requirement_id": "FR_auto_6",
+      "scenario": "Valid User Input",
+      "steps": [
+        "Complete a mental health assessment as a registered user",
+        "Navigate to the dashboard",
+        "Verify the presence of personalized recommendations"
+      ],
+      "expected_result": "The user sees a list of 3 personalized recommendations for improving their mental wellbeing on their dashboard"
+    },
+    {
+      "test_id": "T_auto_12",
+      "requirement_id": "FR_auto_6",
+      "scenario": "New User Assessment",
+      "steps": [
+        "Create a new user account",
+        "Complete a mental health assessment",
+        "Navigate to the dashboard"
+      ],
+      "expected_result": "The new user sees a list of 3 personalized recommendations for improving their mental wellbeing on their dashboard"
+    },
+    {
+      "test_id": "T_auto_13",
+      "requirement_id": "FR_auto_7",
+      "scenario": "Daily Emotional State Summary with Sufficient Logging",
+      "steps": [
+        "Log emotions for 7 consecutive days",
+        "Access the dashboard",
+        "Verify the daily emotional state summary chart"
+      ],
+      "expected_result": "The daily emotional state summary chart displays the user's emotions over time for the past 7 days"
+    },
+    {
+      "test_id": "T_auto_14",
+      "requirement_id": "FR_auto_7",
+      "scenario": "Daily Emotional State Summary with Insufficient Logging",
+      "steps": [
+        "Log emotions for less than 7 days",
+        "Access the dashboard"
+      ],
+      "expected_result": "The daily emotional state summary chart is not displayed or is disabled"
+    },
+    {
+      "test_id": "T_auto_15",
+      "requirement_id": "FR_auto_8",
+      "scenario": "Anxious User Receives Personalized Support",
+      "steps": [
+        "User logs in to the MindDoc app and indicates they are feeling anxious.",
+        "User navigates to the app's support section.",
+        "The system displays a personalized emotional support message."
+      ],
+      "expected_result": "The system displays a message acknowledging the user's anxiety and offers coping strategies."
+    },
+    {
+      "test_id": "T_auto_16",
+      "requirement_id": "FR_auto_8",
+      "scenario": "Multiple Anxiety Triggers",
+      "steps": [
+        "User logs in to the MindDoc app and indicates they are feeling anxious on multiple occasions within a short period.",
+        "User navigates to the app's support section.",
+        "The system displays a personalized emotional support message."
+      ],
+      "expected_result": "The system continues to display varied personalized messages acknowledging the user's anxiety and offers different coping strategies each time."
+    },
+    {
+      "test_id": "T_auto_17",
+      "requirement_id": "FR_auto_9",
+      "scenario": "Successful Journal Entry",
+      "steps": [
+        "Launch the MindDoc app and navigate to the journaling feature",
+        "Write a journal entry and save it",
+        "Verify the journal entry list"
+      ],
+      "expected_result": "The saved journal entry is displayed in the list with a timestamp"
+    },
+    {
+      "test_id": "T_auto_18",
+      "requirement_id": "FR_auto_9",
+      "scenario": "Multiple Journal Entries",
+      "steps": [
+        "Launch the MindDoc app and navigate to the journaling feature",
+        "Write and save multiple journal entries",
+        "Verify the journal entry list"
+      ],
+      "expected_result": "All saved journal entries are displayed in the list with their respective timestamps in chronological order"
+    },
+    {
+      "test_id": "T_auto_19",
+      "requirement_id": "FR_auto_10",
+      "scenario": "Valid Sleep Pattern Logging",
+      "steps": [
+        "Log in to the MindDoc app",
+        "Log sleep patterns for the previous night",
+        "Navigate to the mental health and mood dashboard"
+      ],
+      "expected_result": "The sleep patterns logged for the previous night are displayed alongside mental health and mood data on the dashboard"
+    },
+    {
+      "test_id": "T_auto_20",
+      "requirement_id": "FR_auto_10",
+      "scenario": "Multiple Nights Sleep Pattern Logging",
+      "steps": [
+        "Log in to the MindDoc app",
+        "Log sleep patterns for the previous 3 nights",
+        "Navigate to the mental health and mood dashboard"
+      ],
+      "expected_result": "The sleep patterns logged for the previous 3 nights are displayed alongside mental health and mood data on the dashboard, showing a trend or correlation"
+    },
+    {
+      "test_id": "T_auto_21",
+      "requirement_id": "FR_auto_11",
+      "scenario": "Positive Correlation Identification",
+      "steps": [
+        "Log in to the MindDoc app and navigate to the food intake logging section.",
+        "Log a food intake with a high sugar content (e.g., a dessert) for a specific date.",
+        "Log a mental health and mood entry with a low mood rating for the same date.",
+        "View the mental health and mood analysis section."
+      ],
+      "expected_result": "The system highlights a potential correlation between high sugar intake and low mood."
+    },
+    {
+      "test_id": "T_auto_22",
+      "requirement_id": "FR_auto_11",
+      "scenario": "No Correlation Identification",
+      "steps": [
+        "Log in to the MindDoc app and navigate to the food intake logging section.",
+        "Log a food intake with a balanced diet for a specific date.",
+        "Log a mental health and mood entry with a neutral mood rating for the same date.",
+        "View the mental health and mood analysis section."
+      ],
+      "expected_result": "The system does not highlight any potential correlation between the balanced diet and neutral mood."
+    },
+    {
+      "test_id": "T_auto_23",
+      "requirement_id": "FR_auto_12",
+      "scenario": "Comprehensive Dashboard with Complete Data",
+      "steps": [
+        "Log in to the MindDoc app with a valid user account.",
+        "Ensure the user has logged their cycle patterns, sleep, food, and mental health data for at least a week.",
+        "Navigate to the comprehensive dashboard."
+      ],
+      "expected_result": "The user sees a combined view of all their tracked factors (cycle patterns, sleep, food, and mental health data) and can analyze relationships between them."
+    },
+    {
+      "test_id": "T_auto_24",
+      "requirement_id": "FR_auto_12",
+      "scenario": "Comprehensive Dashboard with Incomplete Data",
+      "steps": [
+        "Log in to the MindDoc app with a valid user account.",
+        "Ensure the user has logged only cycle patterns and sleep data, but not food and mental health data.",
+        "Navigate to the comprehensive dashboard."
+      ],
+      "expected_result": "The user sees a combined view of the tracked factors they have logged (cycle patterns and sleep data), and the system indicates which data is missing (food and mental health data) for a complete analysis."
+    },
+    {
+      "test_id": "T_auto_25",
+      "requirement_id": "FR_auto_13",
+      "scenario": "Valid User Login",
+      "steps": [
+        "Launch the MindDoc app",
+        "Enter valid login credentials and log in",
+        "Navigate to the home screen"
+      ],
+      "expected_result": "The home screen displays a daily mood tracking section with a prompt to log their current mood."
+    },
+    {
+      "test_id": "T_auto_26",
+      "requirement_id": "FR_auto_13",
+      "scenario": "Logged In User Navigation",
+      "steps": [
+        "Log in to the MindDoc app",
+        "Navigate to a different screen and then back to the home screen",
+        "Verify the daily mood tracking section is visible"
+      ],
+      "expected_result": "The daily mood tracking section is still visible on the home screen with a prompt to log their current mood."
+    },
+    {
+      "test_id": "T_auto_27",
+      "requirement_id": "FR_auto_14",
+      "scenario": "Successful access to relaxation exercises",
+      "steps": [
+        "Log in to the MindDoc app",
+        "Navigate to the resources section",
+        "Verify the list of guided relaxation exercises is displayed"
+      ],
+      "expected_result": "The user can access and view a list of guided relaxation exercises with audio playback options."
+    },
+    {
+      "test_id": "T_auto_28",
+      "requirement_id": "FR_auto_14",
+      "scenario": "Playback of relaxation exercise",
+      "steps": [
+        "Log in to the MindDoc app",
+        "Navigate to the resources section",
+        "Select a guided relaxation exercise",
+        "Click on the playback option"
+      ],
+      "expected_result": "The selected guided relaxation exercise starts playing audio without errors."
+    },
+    {
+      "test_id": "T_auto_29",
+      "requirement_id": "FR_auto_15",
+      "scenario": "Create New Journal Entry",
+      "steps": [
+        "Log in to the MindDoc app",
+        "Navigate to the journal section",
+        "Enter text for a new journal entry and save it"
+      ],
+      "expected_result": "The new journal entry is saved and displayed in the list of previous entries"
+    },
+    {
+      "test_id": "T_auto_30",
+      "requirement_id": "FR_auto_15",
+      "scenario": "View Previous Journal Entries",
+      "steps": [
+        "Log in to the MindDoc app",
+        "Navigate to the journal section",
+        "Create multiple new journal entries",
+        "View the list of previous entries"
+      ],
+      "expected_result": "A list of all previous journal entries is displayed, including the most recent ones"
     }
   ]
 }

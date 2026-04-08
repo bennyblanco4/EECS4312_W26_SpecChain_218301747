@@ -3,14 +3,357 @@
     {
       "test_id": "T_hybrid_1",
       "requirement_id": "FR_hybrid_1",
-      "scenario": "Save a workout entry without crashing",
+      "scenario": "Onboarding introduces check-in, insights, and exercises features",
       "steps": [
-        "Open the workout logging feature",
-        "Enter workout information",
-        "Submit the workout"
+        "Install and open MindDoc as a new user",
+        "Progress through each onboarding screen without skipping",
+        "Record which features are introduced and how"
       ],
-      "expected_result": "The workout is saved successfully and the application does not crash.",
-      "notes": "Revised the expected result to match the updated hybrid requirement."
+      "expected_result": "At least one screen per major feature (check-in, insights, exercises) is displayed during onboarding. Each screen includes a plain-language description. No unexplained clinical terminology appears.",
+      "notes": "Revised from T_auto_1. Auto test used 'Perform the action described in FR_auto_1' which is not a verifiable step. Replaced with specific feature enumeration."
+    },
+    {
+      "test_id": "T_hybrid_2",
+      "requirement_id": "FR_hybrid_1",
+      "scenario": "Onboarding cannot be skipped before feature introductions complete",
+      "steps": [
+        "Open the app as a new user",
+        "Attempt to skip or bypass onboarding immediately after the first screen"
+      ],
+      "expected_result": "The system does not allow the user to reach the main dashboard until they have passed through all required onboarding screens, including one introduction per major feature.",
+      "notes": "New test not present in auto pipeline. Addresses the practical risk that users skip onboarding."
+    },
+    {
+      "test_id": "T_hybrid_3",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Three or more educational articles on distinct mental health topics are available",
+      "steps": [
+        "Log in as a free-tier user",
+        "Navigate to the educational content or resources section",
+        "Count and list the topics of available articles"
+      ],
+      "expected_result": "At least three articles are listed, each covering a distinct mental health topic (e.g., anxiety, depression, stress). No two articles cover the same condition.",
+      "notes": "Revised from T_auto_3. Added the count requirement and the distinctness check."
+    },
+    {
+      "test_id": "T_hybrid_4",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Educational content is readable without clinical knowledge",
+      "steps": [
+        "Open any educational article available in the app",
+        "Identify any clinical or technical terms used",
+        "Check whether those terms are explained in the text"
+      ],
+      "expected_result": "Every clinical or technical term that appears in the article is either explained inline or is a widely understood layperson's term. A non-specialist reader can understand the core message.",
+      "notes": "Retained from auto test with clearer verification steps."
+    },
+    {
+      "test_id": "T_hybrid_5",
+      "requirement_id": "FR_hybrid_3",
+      "scenario": "Core user flow completes without crashes",
+      "steps": [
+        "Launch the app",
+        "Complete one check-in session",
+        "Navigate to the insights screen",
+        "Navigate to the settings screen",
+        "Return to the home screen"
+      ],
+      "expected_result": "All five steps complete without a crash, force-close, or unhandled exception. Each screen loads within three seconds on a standard device.",
+      "notes": "Revised from T_auto_5. Added specific navigation path and a three-second load time threshold."
+    },
+    {
+      "test_id": "T_hybrid_6",
+      "requirement_id": "FR_hybrid_3",
+      "scenario": "App restores correctly after ten minutes in background",
+      "steps": [
+        "Open MindDoc and navigate to the check-in screen",
+        "Switch to another app and leave MindDoc in the background for ten minutes",
+        "Return to MindDoc"
+      ],
+      "expected_result": "MindDoc returns to the check-in screen within three seconds of being brought back to the foreground. No crash or blank screen occurs.",
+      "notes": "New test. Addresses the specific background-resume scenario specified in FR_hybrid_3."
+    },
+    {
+      "test_id": "T_hybrid_7",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Three check-in sessions are accepted in one day and complete within three minutes",
+      "steps": [
+        "Complete the first check-in session in the morning and record the start and end time",
+        "Complete the second check-in session in the afternoon",
+        "Complete the third check-in session in the evening"
+      ],
+      "expected_result": "Each session completes in under three minutes. All three check-in records appear in mood history for the same calendar day with correct timestamps.",
+      "notes": "Added the three-minute constraint from FR_hybrid_4 which was absent in the auto test for this requirement."
+    },
+    {
+      "test_id": "T_hybrid_8",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Check-in data appears in mood history within five seconds of submission",
+      "steps": [
+        "Complete a check-in session",
+        "Immediately navigate to the mood history section"
+      ],
+      "expected_result": "The just-completed check-in entry appears in the mood history list within five seconds of submission, with the correct date, time, and mood score.",
+      "notes": "Retained timing SLA from FR_hybrid_4."
+    },
+    {
+      "test_id": "T_hybrid_9",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "Notification arrives within ten minutes of scheduled time when app is closed",
+      "steps": [
+        "Configure a reminder for a specific time that is at least fifteen minutes in the future",
+        "Force-close the app",
+        "Wait for the scheduled reminder time"
+      ],
+      "expected_result": "A push notification from MindDoc appears on the device within ten minutes of the configured time even though the app is force-closed.",
+      "notes": "Revised from T_auto_9 to add the ten-minute tolerance and the force-close scenario. Auto test only said notification arrives 'at the scheduled time' without a testable tolerance."
+    },
+    {
+      "test_id": "T_hybrid_10",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "Tapping notification opens the check-in screen directly",
+      "steps": [
+        "Receive a push notification from MindDoc",
+        "Tap the notification"
+      ],
+      "expected_result": "The app opens and the check-in screen is immediately displayed, ready for the user to begin a session. The app does not open to the home screen first.",
+      "notes": "Added the 'not home screen first' negative assertion which makes the test more specific."
+    },
+    {
+      "test_id": "T_hybrid_11",
+      "requirement_id": "FR_hybrid_6",
+      "scenario": "Free-tier user completes check-in and sees mood score without subscription prompt",
+      "steps": [
+        "Log in as a free-tier user",
+        "Complete a check-in session",
+        "View the results screen"
+      ],
+      "expected_result": "A mood score and at least a one-sentence trend description are displayed on the results screen. No subscription prompt or paywall appears before or during the display of these results.",
+      "notes": "Revised to specify what 'basic result' means (mood score and brief trend description) per FR_hybrid_6."
+    },
+    {
+      "test_id": "T_hybrid_12",
+      "requirement_id": "FR_hybrid_6",
+      "scenario": "Premium upsell is dismissible and does not block basic result",
+      "steps": [
+        "Complete a check-in as a free-tier user",
+        "Observe whether a premium subscription prompt appears",
+        "Attempt to dismiss or close the prompt"
+      ],
+      "expected_result": "If a premium upsell appears, it includes a clearly labeled close/dismiss button. After dismissing, the basic mood summary (score and trend) remains visible.",
+      "notes": "New test. Addresses the specific hybrid requirement that upsells must be dismissible."
+    },
+    {
+      "test_id": "T_hybrid_13",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Data-referenced insight appears after seven consecutive days of check-ins",
+      "steps": [
+        "Complete at least one check-in per day for seven consecutive days",
+        "Navigate to the insights section"
+      ],
+      "expected_result": "At least one insight is displayed that references a specific detected pattern with a time reference (e.g., 'Your mood has been lower on Monday mornings for the past 7 days'). The insight is not a generic tip.",
+      "notes": "Rewritten from T_auto_13. Added the requirement that the insight must contain a time reference and reference specific data, not generic advice."
+    },
+    {
+      "test_id": "T_hybrid_14",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Insight content changes when mood pattern changes",
+      "steps": [
+        "Log consistently high mood for seven days and note the insight shown",
+        "Log consistently low mood for the next seven days and note the new insight"
+      ],
+      "expected_result": "The insight shown after the high-mood period differs from the insight shown after the low-mood period, demonstrating that the system updates insights based on actual data.",
+      "notes": "New test. Verifies the adaptive nature of insights per FR_hybrid_7."
+    },
+    {
+      "test_id": "T_hybrid_15",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "Two consecutive check-in sessions do not have identical question sets",
+      "steps": [
+        "Complete a check-in session and record the questions presented",
+        "Immediately complete another check-in session and record the questions"
+      ],
+      "expected_result": "At least one question differs between the two consecutive sessions. The sets are not completely identical.",
+      "notes": "Retained from auto test. Added the requirement to record and compare question sets explicitly."
+    },
+    {
+      "test_id": "T_hybrid_16",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "At least fifteen distinct questions appear across ten consecutive sessions",
+      "steps": [
+        "Complete ten check-in sessions over multiple days",
+        "Record all questions presented in each session",
+        "Count the number of distinct questions seen across all ten sessions"
+      ],
+      "expected_result": "At least fifteen unique questions have been presented across the ten sessions.",
+      "notes": "New test. Directly tests the ten-session / fifteen-question measurable constraint from FR_hybrid_8."
+    },
+    {
+      "test_id": "T_hybrid_17",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Journal entry is stored and linked to the check-in record",
+      "steps": [
+        "Complete a check-in and enter a unique text string in the journal field",
+        "Submit the session",
+        "Navigate to the check-in history and open the entry just completed"
+      ],
+      "expected_result": "The journal text entered during the check-in is displayed alongside the structured mood data for that session in the history view.",
+      "notes": "Revised from T_auto_17 and T_auto_18. Combined into one clear test with a unique text string for verification."
+    },
+    {
+      "test_id": "T_hybrid_18",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Journal entries from more than 30 days ago remain accessible",
+      "steps": [
+        "Enter a journal entry during a check-in",
+        "Wait more than 30 days or simulate time passage",
+        "Navigate to the check-in history and open the old entry"
+      ],
+      "expected_result": "The journal entry from more than 30 days ago is still displayed and complete. No data has been deleted or truncated.",
+      "notes": "New test. Addresses the retention requirement added in FR_hybrid_9."
+    },
+    {
+      "test_id": "T_hybrid_19",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "Weekly and monthly mood charts display accurate data",
+      "steps": [
+        "Complete check-ins for at least ten days",
+        "Navigate to mood history and view the 7-day chart",
+        "Switch to the 30-day chart"
+      ],
+      "expected_result": "Both the 7-day and 30-day charts display data for the correct time periods. The number of data points matches the number of days with completed check-ins.",
+      "notes": "Retained from auto tests. Merged T_auto_19 and T_auto_20 for efficiency."
+    },
+    {
+      "test_id": "T_hybrid_20",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "Mood chart updates within 30 seconds after a new check-in",
+      "steps": [
+        "View the mood history chart",
+        "Complete a new check-in session",
+        "Return to the mood history chart within 30 seconds"
+      ],
+      "expected_result": "The chart displays the new check-in data point. The update occurs within 30 seconds of check-in submission without requiring a manual refresh.",
+      "notes": "New test. Addresses the 30-second data freshness requirement added in FR_hybrid_10."
+    },
+    {
+      "test_id": "T_hybrid_21",
+      "requirement_id": "FR_hybrid_11",
+      "scenario": "Check-in data from more than 30 days ago is accessible",
+      "steps": [
+        "Use the app for more than 30 days with regular check-ins",
+        "Navigate to mood history and scroll back to entries older than 30 days"
+      ],
+      "expected_result": "Entries from more than 30 days ago are present and complete in the history view.",
+      "notes": "Retained from auto test T_auto_21."
+    },
+    {
+      "test_id": "T_hybrid_22",
+      "requirement_id": "FR_hybrid_11",
+      "scenario": "All check-in data is preserved after an app update",
+      "steps": [
+        "Record several weeks of check-in data",
+        "Update the app to a newer version via the Play Store",
+        "Launch the updated app and navigate to mood history"
+      ],
+      "expected_result": "All check-in records, mood scores, and journal entries from before the update are still present and correct. No data loss or corruption occurs during the update.",
+      "notes": "Retained from T_auto_22 with no changes needed."
+    },
+    {
+      "test_id": "T_hybrid_23",
+      "requirement_id": "FR_hybrid_12",
+      "scenario": "User can configure up to three notification times",
+      "steps": [
+        "Open notification settings",
+        "Enable and configure three separate reminder times",
+        "Save the settings"
+      ],
+      "expected_result": "All three configured times are saved and displayed in the settings screen as active reminders.",
+      "notes": "Revised from T_auto_23 to clarify that all three times must be shown as active after saving."
+    },
+    {
+      "test_id": "T_hybrid_24",
+      "requirement_id": "FR_hybrid_12",
+      "scenario": "Schedule change takes effect for next notification without app restart",
+      "steps": [
+        "Change a reminder time to a value more than ten minutes in the future",
+        "Save without restarting the app",
+        "Wait for the new scheduled time"
+      ],
+      "expected_result": "The notification arrives at the new configured time. The app does not need to be restarted for the change to take effect.",
+      "notes": "Rewritten from T_auto_24. Added the 'no restart required' negative assertion."
+    },
+    {
+      "test_id": "T_hybrid_25",
+      "requirement_id": "FR_hybrid_13",
+      "scenario": "Crisis screen appears for self-harm response and is non-dismissible without acknowledgment",
+      "steps": [
+        "Start a check-in session",
+        "Select a crisis-level response indicating thoughts of self-harm",
+        "Attempt to proceed past the crisis screen by pressing back or swiping"
+      ],
+      "expected_result": "A crisis support screen appears immediately. It contains: a supportive message, at least one crisis helpline number, and an 'I understand' or equivalent button. The screen cannot be bypassed without tapping the acknowledgment button.",
+      "notes": "Substantially rewritten from T_auto_25. Added the non-dismissibility test and the required content list (supportive message, helpline, acknowledgment button)."
+    },
+    {
+      "test_id": "T_hybrid_26",
+      "requirement_id": "FR_hybrid_13",
+      "scenario": "Crisis helpline information is regionally appropriate",
+      "steps": [
+        "Trigger a crisis response in the app",
+        "View the crisis support screen",
+        "Check the helpline number displayed"
+      ],
+      "expected_result": "The crisis helpline number displayed corresponds to a real, active crisis line appropriate for the user's detected or configured region (e.g., 988 Suicide and Crisis Lifeline for US users).",
+      "notes": "New test. Addresses the regional relevance requirement added in FR_hybrid_13."
+    },
+    {
+      "test_id": "T_hybrid_27",
+      "requirement_id": "FR_hybrid_14",
+      "scenario": "At least 20 distinct emotion options are available in check-in",
+      "steps": [
+        "Start a check-in and navigate to the emotion selection step",
+        "Count the total number of distinct labeled emotion options available"
+      ],
+      "expected_result": "At least 20 distinct, labeled emotion options are displayed.",
+      "notes": "Updated threshold from 15 (T_auto_27) to 20 per FR_hybrid_14."
+    },
+    {
+      "test_id": "T_hybrid_28",
+      "requirement_id": "FR_hybrid_14",
+      "scenario": "Emotions are organized by valence with both low and high intensity options",
+      "steps": [
+        "Open the emotion selection step in a check-in",
+        "Identify the organizational structure of emotion options",
+        "Check for both positive and negative valence groups",
+        "Check for both low-intensity and high-intensity options within each group"
+      ],
+      "expected_result": "Emotions are grouped or labeled by valence (positive and negative). At least one low-intensity and one high-intensity option exists within each valence group (e.g., content vs. elated for positive; sad vs. devastated for negative).",
+      "notes": "New test. Addresses the valence × intensity organization requirement in FR_hybrid_14."
+    },
+    {
+      "test_id": "T_hybrid_29",
+      "requirement_id": "FR_hybrid_15",
+      "scenario": "A named coping exercise appears after a check-in reporting anxiety",
+      "steps": [
+        "Complete a check-in and select anxiety as the dominant emotion",
+        "View the results or recommendations screen"
+      ],
+      "expected_result": "At least one named coping exercise (e.g., '4-7-8 breathing,' 'progressive muscle relaxation') is displayed on the results screen, relevant to anxiety.",
+      "notes": "Revised from T_auto_29. Added requirement that the exercise be named, not just described generically."
+    },
+    {
+      "test_id": "T_hybrid_30",
+      "requirement_id": "FR_hybrid_15",
+      "scenario": "Recommendations differ between an anxious session and a sad session",
+      "steps": [
+        "Complete a check-in reporting primary emotion as anxious",
+        "Note the coping exercise(s) recommended",
+        "Complete another check-in reporting primary emotion as sad",
+        "Note the coping exercise(s) recommended"
+      ],
+      "expected_result": "The exercises recommended for the anxious session differ from those recommended for the sad session. At least one different exercise name appears in each recommendation.",
+      "notes": "Retained from T_auto_30 with minor wording refinement."
     }
   ]
 }
